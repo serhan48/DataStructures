@@ -131,10 +131,10 @@ int insert(HeapArray* heap, int value) {
 			parent_index = parent(index);
 		}
 		
-		return 1; // Ekleme baþarýlý.
+		return 1; // Ekleme basarili.
 	}
 	
-	return 0; // Ekleme baþarýsýz.
+	return 0; // Ekleme basarisiz.
 }
 
 
