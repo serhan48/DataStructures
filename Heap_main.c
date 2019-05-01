@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// 0 tabanlı indexlemede array içindeki i. düğümün childlarının ve parentının hesaplanması için makrolar
+// 0 tabanli indexlemede array iÃ§indeki i. dugumun childlarinin ve parentinin hesaplanmasi iÃ§in makrolar
 #define leftChild(i) (2 * i + 1)
 #define rightChild(i) (2 * i + 2)
 #define parent(i) ((i - 1) / 2)
@@ -14,7 +14,7 @@ typedef struct HeapArray {
 } HeapArray;
 
 
-// Parametre olarak verilen kapasitede bir HeapArray yapısı oluşturur.
+// Parametre olarak verilen kapasitede bir HeapArray olusturur.
 HeapArray* createHeapArray(int maxSize) {
 	
 	HeapArray* heap = malloc(sizeof(HeapArray));
@@ -39,8 +39,8 @@ HeapArray* createHeapArray(int maxSize) {
 		
 }
 
-// Parametre olarak verilen indexteki max-heap özelliğini bozan indexteki elemanı left ve right childlarından büyük olanıyla değiştirir
-// ve değiştirilen elemandan yine aynı prosedürü recursive olarak tekrarlar.
+// Parametre olarak verilen indexteki max-heap Ã¶zellgini bozan indexteki elemani left ve right childlarindan bÃ¼yÃ¼k olaniyla degistirir
+// ve degistirilen elemandan yine ayni prosedÃ¼rÃ¼ recursive olarak tekrarlar.
 void maxHeapify(HeapArray* h, int index) {
 	
 	int largest_index;
@@ -70,21 +70,21 @@ void maxHeapify(HeapArray* h, int index) {
 }
 
 
-// Heapdeki en büyük değeri (root) silmeden döndürür.
+// Heapdeki maksimum degeri (root) silmeden dÃ¶ndÃ¼rÃ¼r.
 int getMax(HeapArray* heap) {
 	
 	return heap->array[0];
 	
 }
 
-// Heapdeki eleman sayısını döndürür.
+// Heapdeki eleman sayisini dÃ¶ndÃ¼rÃ¼r.
 int getSize(HeapArray* heap) {
 	
 	return heap->size;
 	
 }
 
-// Heap dolu mu boş mu kontrol eder.
+// Heap dolu olup olmadigin kontrol eder.
 int isEmpty(HeapArray* heap) {
 	
 	if (heap->size == 0)
@@ -93,8 +93,8 @@ int isEmpty(HeapArray* heap) {
 		return 0;
 }
 
-// Heapdeki en büyük değeri (root) döndürür
-// ve root yerine sondaki elemanı yazarak silip max-heap özelliğini sağlamak root için maxHeapify fonksiyonunu çağırır.
+// Heapdeki maksimum degeri (root) dÃ¶ndÃ¼rÃ¼r
+// ve root yerine sondaki elemani yazarak silip max-heap Ã¶zelligini saglamak root iÃ§in maxHeapify fonksiyonunu cagirir.
 int extractMax(HeapArray* heap) {
 	
 	int max = heap->array[0];
@@ -108,9 +108,9 @@ int extractMax(HeapArray* heap) {
 	
 }
 
-// Parametre olarak verilen değeri heapin en sonuna ekler
-// Sondaki eleman parentı ile max-heap özelliği sağlamıyorsa swap edip parenttan recursive olarak kontrole devam eder.
-// Ekleme başarılı ise 1 değil ise 0 döndürür.
+// Parametre olarak verilen degeri heapin en sonuna ekler.
+// Sondaki eleman parenti ile max-heap Ã¶zelligini saglamiyorsa swap edip parenttan recursive olarak kontrole devam eder.
+// Ekleme basarili ise 1 degil ise 0 dÃ¶ndÃ¼rÃ¼r.
 int insert(HeapArray* heap, int value) {
 	
 	if (heap->size < heap->maxSize) {
@@ -131,10 +131,10 @@ int insert(HeapArray* heap, int value) {
 			parent_index = parent(index);
 		}
 		
-		return 1; // Ekleme başarılı.
+		return 1; // Ekleme baÃ¾arÃ½lÃ½.
 	}
 	
-	return 0; // Ekleme başarısız.
+	return 0; // Ekleme baÃ¾arÃ½sÃ½z.
 }
 
 
